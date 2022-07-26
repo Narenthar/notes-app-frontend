@@ -1,17 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Badge, Accordion } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import notes from "../../data/notes";
 
 const MyNotes = () => {
+  const deleteHandler = (id) => {
+    if (window.confirm("Are you sure?")) {
+    }
+  };
+
   return (
     <MainScreen title="Welcome Narenthar">
       <Link to="createnote">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
           Create new note
         </Button>
-        {notes.map((note) => (
+      </Link>
+      {notes.map((note) => (
+        <Accordion>
           <Card style={{ margin: 10 }}>
             <Card.Header style={{ display: "flex" }}>
               <span
@@ -24,32 +31,39 @@ const MyNotes = () => {
                   fontSize: 18,
                 }}
               >
-                title
+                <Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
+                  {note.title}
+                </Accordion.Toggle>
               </span>
-
               <div>
-                <Button>Edit</Button>
-                <Button variant="danger" className="mx-2">
+                <Button>
+                  <Link to={`/note/${note._id}`}>Edit</Link>
+                </Button>
+                <Button
+                  variant="danger"
+                  className="mx-2"
+                  onClick={() => deleteHandler(note._id)}
+                >
                   Delete
                 </Button>
               </div>
             </Card.Header>
-            <Card.Body>
-              <blockquote className="blockquote mb-0">
-                <p>
-                  {" "}
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer posuere erat a ante.{" "}
-                </p>
-                <footer className="blockquote-footer">
-                  Someone famous in{" "}
-                  <cite title="Source Title">Source Title</cite>
-                </footer>
-              </blockquote>
-            </Card.Body>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>
+                <h4>
+                  <Badge bg="success">Category -{note.category}</Badge>
+                </h4>
+                <blockquote className="blockquote mb-0">
+                  <p> {note.content} </p>
+                  <footer className="blockquote-footer">
+                    Created on -date
+                  </footer>
+                </blockquote>
+              </Card.Body>
+            </Accordion.Collapse>
           </Card>
-        ))}
-      </Link>
+        </Accordion>
+      ))}
     </MainScreen>
   );
 };
