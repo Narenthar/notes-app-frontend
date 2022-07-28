@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, Badge, Accordion } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
-import notes from "../../data/notes";
+// import notes from "../../data/notes";
+import axios from "axios";
 
 const MyNotes = () => {
   const deleteHandler = (id) => {
@@ -10,7 +11,16 @@ const MyNotes = () => {
     }
   };
 
-  useEffect(() => {}, []);
+  const [notes, setNotes] = useState([]);
+
+  const fetchNotes = async () => {
+    const { data } = await axios.get("http://localhost:5000/api/notes");
+    setNotes(data);
+  };
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
 
   return (
     <MainScreen title="Welcome Narenthar">
@@ -20,7 +30,7 @@ const MyNotes = () => {
         </Button>
       </Link>
       {notes.map((note) => (
-        <Accordion>
+        <Accordion defaultActiveKey="1" key={note._id}>
           <Card style={{ margin: 10 }}>
             <Card.Header style={{ display: "flex" }}>
               <span

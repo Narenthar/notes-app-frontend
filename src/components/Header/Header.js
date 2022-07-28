@@ -27,9 +27,7 @@ const Header = () => {
             </Form>
           </Nav>
           <Nav>
-            <Nav.Link>
-              <Link to="/mynotes">My Notes</Link>
-            </Nav.Link>
+            <Nav.Link href="/mynotes">My Notes</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Narenthar</NavDropdown.Item>
 
