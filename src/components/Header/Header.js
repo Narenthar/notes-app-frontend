@@ -13,7 +13,9 @@ const Header = () => {
     <Navbar bg="primary" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand>
-          <Link to="/">Notes</Link>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            Notes
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
