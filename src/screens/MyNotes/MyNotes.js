@@ -11,6 +11,7 @@ const MyNotes = () => {
     }
   };
 
+  //
   const [notes, setNotes] = useState([]);
 
   const fetchNotes = async () => {
