@@ -6,7 +6,8 @@ const LandingPage = () => {
   //   const userInfo = localStorage.getItem("userInfo");
 
   //   if(userInfo){
-  //     history.pushState("/mynotes");
+  // history.pushState("/mynotes");
+  // useNavigate() from react-router-dom
   //   }
   // },[history])
   return (
