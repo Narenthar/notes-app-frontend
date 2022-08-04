@@ -7,9 +7,9 @@ import {
   FormControl,
   Container,
 } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Header = () => {
-  const navigate = useNavigate();
+  const logoutHandler = () => {};
   return (
     <Navbar bg="primary" expand="lg" variant="dark">
       <Container>
@@ -35,12 +35,7 @@ const Header = () => {
               <NavDropdown.Item href="#action/3.1">Narenthar</NavDropdown.Item>
 
               <NavDropdown.Divider />
-              <NavDropdown.Item
-                onClick={() => {
-                  localStorage.removeItem("userInfo");
-                  navigate("/");
-                }}
-              >
+              <NavDropdown.Item onClick={logoutHandler}>
                 Logout
               </NavDropdown.Item>
             </NavDropdown>
