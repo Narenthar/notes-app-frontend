@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   Nav,
@@ -7,9 +7,22 @@ import {
   FormControl,
   Container,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../actions/userActions";
 const Header = () => {
-  const logoutHandler = () => {};
+  const history = useHistory();
+
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    history.push("/");
+  };
+
+  useEffect(() => {}, [userInfo]);
   return (
     <Navbar bg="primary" expand="lg" variant="dark">
       <Container>
