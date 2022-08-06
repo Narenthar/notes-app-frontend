@@ -1,11 +1,11 @@
 .main {
   min-height: 90vh;
-  display: flex;
-  align-items: center;
   background-image: url(../../assests/Landing-background.jpg);
   background-position: center;
   background-size: cover;
+  position: relative;
 }
+
 .title {
   font-size: 4rem;
 }
@@ -14,15 +14,30 @@
   padding-top: 10px;
 }
 .intro-text {
-  width: 100%;
+  color: #333;
+  font-family: sans-serif;
+  line-height: 1.5;
+  max-width: 50%;
+  padding: 1rem 2rem;
   text-align: center;
   align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.33);
 }
 
 .buttonContainer {
   margin-top: 50px;
   display: flex;
   justify-content: space-evenly;
+  gap: 2rem;
 }
 
 .landingbutton {
@@ -41,7 +56,17 @@
 
 @media only screen and (max-width: 768px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
   }
   .landingbutton {
     width: 150px;

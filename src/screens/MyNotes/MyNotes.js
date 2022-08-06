@@ -103,7 +103,12 @@ const MyNotes = ({ search }) => {
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
                   <h4>
-                    <Badge variant="success">Category -{note.category}</Badge>
+                    <Badge
+                      variant="secondary"
+                      style={{ color: "#f8f9fa", backgroundColor: "#f3969a" }}
+                    >
+                      Category -{note.category}
+                    </Badge>
                   </h4>
                   <blockquote className="blockquote mb-0">
                     <p> {note.content} </p>
