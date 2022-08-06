@@ -8,9 +8,9 @@ import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 
 function SingleNote({ match, history }) {
-  const [title, setTitle] = useState();
-  const [content, setContent] = useState();
-  const [category, setCategory] = useState();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [category, setCategory] = useState("");
   const [date, setDate] = useState("");
 
   const dispatch = useDispatch();
