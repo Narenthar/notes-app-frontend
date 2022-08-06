@@ -10,7 +10,7 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/userActions";
-const Header = () => {
+const Header = ({ setSearch }) => {
   const history = useHistory();
 
   const dispatch = useDispatch();
@@ -39,12 +39,18 @@ const Header = () => {
                 type="text"
                 placeholder="Search"
                 className="mr-sm-2"
+                onChange={(e) => setSearch(e.target.value)}
               />
             </Form>
           </Nav>
           <Nav>
             <Nav.Link href="/mynotes">My Notes</Nav.Link>
-            <NavDropdown title="Narenthar" id="basic-nav-dropdown">
+            {/* <img
+              src={userInfo.pic}
+              alt={userInfo.name}
+              style={{ width: "30px", height: "30px", borderRadius: "50%" }}
+            /> */}
+            <NavDropdown title="Naren" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">My profile</NavDropdown.Item>
 
               <NavDropdown.Divider />
