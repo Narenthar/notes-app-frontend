@@ -35,8 +35,9 @@ const Header = ({ setSearch }) => {
                 width: "30px",
                 height: "30px",
                 borderRadius: "50%",
+                objectFit: "cover",
               }}
-            />
+            />{" "}
             Notes
           </Link>
         </Navbar.Brand>
