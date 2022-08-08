@@ -46,13 +46,23 @@ const Header = ({ setSearch }) => {
           {userInfo ? (
             <Nav>
               <Nav.Link href="/mynotes">My Notes</Nav.Link>
-              <NavDropdown title={userInfo?.name} id="basic-nav-dropdown">
-                {" "}
-                <img
-                  src={userInfo?.pic}
-                  alt={userInfo?.name}
-                  style={{ width: "30px", height: "30px", borderRadius: "50%" }}
-                />
+              <NavDropdown
+                title={
+                  <div>
+                    <img
+                      src={userInfo?.pic}
+                      alt={userInfo?.name}
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                    {userInfo?.name}
+                  </div>
+                }
+                id="basic-nav-dropdown"
+              >
                 <NavDropdown.Item href="/profile">My profile</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logoutHandler}>
