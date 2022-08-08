@@ -12,7 +12,7 @@ import {
 } from "../constants/userConstants";
 import axios from "axios";
 
-const URL = "http://localhost:5000";
+const URL = "https://notesapp-narenthar.herokuapp.com";
 
 export const login = (email, password) => async (dispatch) => {
   try {

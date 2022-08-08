@@ -14,7 +14,7 @@ import {
   NOTES_UPDATE_SUCCESS,
 } from "../constants/noteConstants";
 
-const URL = "http://localhost:5000";
+const URL = "https://notesapp-narenthar.herokuapp.com";
 
 export const listNotes = () => async (dispatch, getState) => {
   try {

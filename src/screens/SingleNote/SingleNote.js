@@ -27,7 +27,7 @@ function SingleNote({ match, history }) {
     }
     history.push("/mynotes");
   };
-  axios.defaults.baseURL = "http://localhost:5000";
+  axios.defaults.baseURL = "https://notesapp-narenthar.herokuapp.com";
   useEffect(() => {
     const fetching = async () => {
       const { data } = await axios.get(`/api/notes/${match.params.id}`);
