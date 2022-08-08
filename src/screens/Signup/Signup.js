@@ -62,7 +62,7 @@ const Signup = () => {
           console.log(err);
         });
     } else {
-      return setPicMessage("Plaese selce an Image");
+      return setPicMessage("Plaese select an Image");
     }
   };
   return (
@@ -122,7 +122,7 @@ const Signup = () => {
               custom
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button className="submit" variant="primary" type="submit">
             Submit
           </Button>
         </Form>

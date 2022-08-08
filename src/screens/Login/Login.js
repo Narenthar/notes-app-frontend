@@ -55,7 +55,7 @@ const Login = ({ history }) => {
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button className="submit" variant="primary" type="submit">
             Submit
           </Button>
         </Form>
