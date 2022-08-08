@@ -97,12 +97,17 @@ function SingleNote({ match, history }) {
               />
             </Form.Group>
             {loading && <Loading size={50} />}
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+              style={{ marginTop: "10px" }}
+            >
               Update Note
             </Button>
             <Button
               className="mx-2"
               variant="danger"
+              style={{ marginTop: "10px" }}
               onClick={() => deleteHandler(match.params.id)}
             >
               Delete Note

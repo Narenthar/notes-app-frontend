@@ -17,8 +17,6 @@ function CreateNote({ history }) {
   const noteCreate = useSelector((state) => state.noteCreate);
   const { loading, error, note } = noteCreate;
 
-  console.log(note);
-
   const resetHandler = () => {
     setTitle("");
     setCategory("");
@@ -74,10 +72,19 @@ function CreateNote({ history }) {
               />
             </Form.Group>
             {loading && <Loading size={50} />}
-            <Button type="submit" variant="primary">
+            <Button
+              type="submit"
+              variant="primary"
+              style={{ marginTop: "10px" }}
+            >
               Create Note
             </Button>
-            <Button className="mx-2" onClick={resetHandler} variant="danger">
+            <Button
+              className="mx-2"
+              onClick={resetHandler}
+              variant="danger"
+              style={{ marginTop: "10px" }}
+            >
               Reset Feilds
             </Button>
           </Form>
